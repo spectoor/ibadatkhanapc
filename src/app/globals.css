@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #E6C95A;
+  --color-deep-green: #355344;
+  --color-dark-gray: #161616;
+  --color-light-gray: #f6f6f6;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+  }
+
+  body {
+    @apply bg-white text-dark-gray;
+  }
+}
