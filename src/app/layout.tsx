@@ -22,7 +22,7 @@ export default function RootLayout({
         <Footer />
         <Script
           src="https://www.powr.io/powr.js?platform=hostinger"
-          strategy="lazyOnload"
+          strategy="beforeInteractive"
         />
       </body>
     </html>

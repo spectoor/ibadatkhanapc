@@ -1,9 +1,17 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import {facebookUrl, prayerTimes} from "@/lib/config";
 import {getSunset} from "sunrise-sunset-js";
+import {useEffect, useState} from "react";
 
 export default function Home() {
+  const [displaySocial, setDisplaySocial] = useState(false);
+  useEffect(() => {
+    setDisplaySocial(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-stone-50">
 
@@ -167,7 +175,7 @@ export default function Home() {
           </div>
           {/* Placeholder pour EmbedSocial */}
           <div className="mt-8 text-center text-sm text-slate-500">
-            <div className="powr-social-feed" id="67e24538_1768342281"></div>
+            {displaySocial && <div className="powr-social-feed" id="67e24538_1768342281"></div>}
           </div>
         </div>
       </section>
