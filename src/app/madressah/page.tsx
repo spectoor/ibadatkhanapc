@@ -100,7 +100,7 @@ export default function MadressahPage() {
       currentY += splitText4.length * 4.5;
 
       currentY += 6;
-      let startY = currentY;
+      const startY = currentY;
 
       // ===== Bloc unique avec tous les champs =====
       doc.setFontSize(11);
@@ -111,8 +111,8 @@ export default function MadressahPage() {
       doc.rect(10, startY, 190, blocHeight);
 
       // Deux colonnes
-      let leftX = 12;
-      let rightX = 110;
+      const leftX = 12;
+      const rightX = 110;
       let lineY = startY + 8;
 
       // Ligne 1 : Nom et Prénom de l'élève
@@ -376,7 +376,7 @@ export default function MadressahPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="age" className="block text-sm font-medium text-darkGray mb-2">
-                  Age *
+                  Âge *
                 </label>
                 <input
                   type="number"

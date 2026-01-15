@@ -8,8 +8,25 @@ import {useEffect, useState} from "react";
 
 export default function Home() {
   const [displaySocial, setDisplaySocial] = useState(false);
+  const [mahgribTime, setMahgribTime] = useState('--:--');
+
   useEffect(() => {
     setDisplaySocial(true);
+
+    // Calculer l'heure de Mahgrib avec le fuseau horaire de la Réunion
+    const now = new Date();
+    const sunset = getSunset(-21.0094, 55.2708, now);
+
+    if (sunset) {
+      // Convertir au fuseau horaire de la Réunion (UTC+4)
+      const reunionTime = sunset.toLocaleTimeString('fr-FR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: 'Indian/Reunion'
+      });
+      setMahgribTime(reunionTime);
+    }
   }, []);
 
   return (
@@ -151,11 +168,7 @@ export default function Home() {
                   <div key={element.prayer} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 flex-shrink-0 basis-[calc(33.333%-1rem)] md:basis-auto md:flex-1">
                     <p className="text-amber-100 text-sm font-medium mb-2 text-center">{element.prayer}</p>
                     <p className="text-gold text-2xl font-bold text-center">
-                      {
-                        element.prayer === 'Mahgrib' ?
-                          getSunset(-21.0094, 55.2708, new Date())?.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: false }) :
-                          element.time
-                      }
+                      {element.prayer === 'Mahgrib' ? mahgribTime : element.time}
                     </p>
                   </div>
                 ))}
