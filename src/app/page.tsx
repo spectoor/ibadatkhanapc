@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 import {facebookUrl, prayerTimes} from "@/lib/config";
 
 export default function Home() {
@@ -59,7 +59,7 @@ export default function Home() {
 
               <div className="pt-4">
                 <Link
-                  href="/madressah"
+                  href={facebookUrl}
                   className="inline-flex items-center space-x-2 text-deep-green/80 hover:text-deep-green font-semibold group"
                 >
                   <span>Notre actualité</span>
@@ -70,26 +70,29 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl animate-fadeInRight">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-yellow-600/20"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-64 h-64 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full opacity-20 blur-3xl"></div>
-              </div>
+            <div className="relative h-96 md:h-125 rounded-2xl overflow-hidden shadow-2xl animate-fadeInRight">
+              <Image
+                src="/ibadat.jpg"
+                alt="Ibadat Khana"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
       </section>
 
-
       {/* Madressah Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl animate-fadeInRight">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-yellow-600/20"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-64 h-64 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full opacity-20 blur-3xl"></div>
-              </div>
+            <div className="relative h-96 md:h-125 rounded-2xl overflow-hidden shadow-2xl animate-fadeInRight">
+              <Image
+                src="/madressah.jpg"
+                alt="Ibadat Khana"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+              />
             </div>
             <div className="space-y-6 animate-fadeInLeft">
               <div className="space-y-2">
@@ -100,11 +103,11 @@ export default function Home() {
               </div>
 
               <p className="text-lg text-slate-600 leading-relaxed">
-                L&apos;Association Musulmane Sunnite de Plateau Caillou (AMSPC) est un lieu de culte et d&apos;enseignement situé à Saint-Paul, La Réunion. Nous accueillons la communauté musulmane pour les prières quotidiennes et proposons des cours d&apos;enseignement religieux à travers notre Madressah.
+                La Madressah de Plateau Caillou est une école coranique dédiée à l’enseignement religieux et spirituel des jeunes musulmans de la communauté. Son objectif est de transmettre les valeurs et principes de l’Islam tout en offrant une formation de qualité basée sur le respect des enseignements du Coran et de la Sunna.
               </p>
 
               <p className="text-lg text-slate-600 leading-relaxed">
-                Notre mission est de promouvoir les valeurs de l&apos;Islam sunnite dans un esprit de paix, de tolérance et de partage.
+                La Madressah propose des cours sur la récitation et la mémorisation du Coran, l’étude des hadiths, ainsi que l’apprentissage des bases du fiqh (jurisprudence islamique), des ‘aqaïd (croyances islamiques) et de la Sirah (vie du Prophète, Paix et bénédictions sur lui). Elle s’engage également à enseigner des valeurs éthiques et morales importantes pour former des individus responsables et respectueux de leur foi, tout en étant ancrés dans leur société.
               </p>
 
               <div className="pt-4">
@@ -150,32 +153,14 @@ export default function Home() {
 
       {/* Suivez notre actualité */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 space-y-4">
-              <p className="text-deep-green/85 font-bold uppercase tracking-wider text-md">Restez Connecté</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Suivez notre actualité</h2>
-            </div>
-
-            <div className="bg-gradient-to-br from-slate-50 to-amber-50/30 rounded-2xl p-8 text-center shadow-xl">
-              <p className="text-slate-600 text-lg mb-6">
-                Retrouvez toutes nos actualités et événements sur notre page Facebook
-              </p>
-              <Button asChild variant="outline" size="lg" className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50">
-                <Link
-                  href={facebookUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visiter notre page Facebook
-                </Link>
-              </Button>
-            </div>
-
-            {/* Placeholder pour EmbedSocial */}
-            <div className="mt-8 text-center text-sm text-slate-500">
-              <p>Widget Facebook EmbedSocial à intégrer ici</p>
-            </div>
+        <div className="mx-auto">
+          <div className="text-center mb-12 space-y-4">
+            <p className="text-deep-green/85 font-bold uppercase tracking-wider text-md">Restez Connecté</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Suivez notre actualité</h2>
+          </div>
+          {/* Placeholder pour EmbedSocial */}
+          <div className="mt-8 text-center text-sm text-slate-500">
+            <div className="powr-social-feed" id="67e24538_1768342281"></div>
           </div>
         </div>
       </section>
@@ -188,29 +173,59 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Soutenez notre association</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Card 1 */}
+          <div className="grid md:grid-cols-3 gap-8 mx-auto">
+            {/* Dons Ibadat */}
+              <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <Link href={'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou/collectes/recolte-de-don'} target="_blank" rel="noopener noreferrer">
+                  <div className="aspect-video relative overflow-hidden">
+                    <Image
+                      src="/dons-ibadat.jpg"
+                      alt="Dons à l'Ibadat Khana"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-8 bg-white">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Dons à l'Ibadat Khana</h3>
+                    <p className="text-slate-600">Nos dépenses augmentent et nos dons actuels ne couvrent pas encore tous nos besoins. Chaque don compte. Contribuez dès maintenant — par la grâce d’Allah, avançons ensemble.</p>
+                  </div>
+                </Link>
+              </div>
+
+            {/* Dons projets */}
             <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="aspect-video relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-yellow-700"></div>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
-              </div>
-              <div className="p-8 bg-white">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">Prières quotidiennes</h3>
-                <p className="text-slate-600">Rejoignez-nous pour les cinq prières quotidiennes et la prière du vendredi dans un cadre apaisant et fraternel.</p>
-              </div>
+              <Link href={'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou/formulaires/1'} target="_blank" rel="noopener noreferrer">
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src="/dons-projets.jpg"
+                    alt="Financement des projets"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 bg-white">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Financement des projets</h3>
+                  <p className="text-slate-600">Votre don aide à rénover, améliorer nos installations et maintenir les cours pour nos enfants et nos jeunes. Chaque contribution renforce notre communauté et préserve notre patrimoine religieux.</p>
+                </div>
+              </Link>
             </div>
 
-            {/* Card 2 */}
+            {/* Dons parrainage */}
             <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="aspect-video relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-amber-700"></div>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
-              </div>
-              <div className="p-8 bg-white">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">La Madressah</h3>
-                <p className="text-slate-600">Enseignement religieux de qualité pour enfants et adolescents : Coran, langue arabe, histoire islamique et éthique.</p>
-              </div>
+              <Link href={'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou/formulaires/3'} target="_blank" rel="noopener noreferrer">
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src="/dons-parrainage.jpg"
+                    alt="Parrainer un élève"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 bg-white">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Parrainer un élève</h3>
+                  <p className="text-slate-600">En parrainant un enfant, vous lui offrez l’opportunité d’accéder aux cours.</p>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

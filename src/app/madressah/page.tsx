@@ -264,10 +264,8 @@ export default function MadressahPage() {
         </h2>
         <div className="prose prose-lg max-w-none text-darkGray/80">
           <p className="text-lg leading-relaxed mb-4">
-            Notre Madressah offre un enseignement religieux de qualité aux enfants et
-            adolescents de la communauté. Les cours sont dispensés dans le respect des
-            traditions de l&apos;Islam sunnite.
-            À travers un cadre bienveillant et structuré, la madressah de Plateau Caillou est un lieu où les enfants et adolescents peuvent grandir dans leur foi, acquérir des connaissances religieuses profondes et s’intégrer harmonieusement dans leur communauté.
+            Notre Madressah offre un enseignement religieux de qualité aux enfants et adolescents de la communauté. Les cours sont dispensés dans le respect des traditions de l&apos;Islam sunnite.
+            À travers un cadre bienveillant et structuré, la Madressah de Plateau Caillou est un lieu où les enfants et adolescents peuvent grandir dans leur foi, acquérir des connaissances religieuses profondes et s’intégrer harmonieusement dans leur communauté.
           </p>
           <div className="bg-lightGray rounded-lg pt-8">
             <h3 className="text-xl font-semibold text-gold mb-4">Programme d&apos;enseignement</h3>
@@ -294,14 +292,14 @@ export default function MadressahPage() {
             Nous avons l’honneur de vous présenter notre enseignant et Imam, un homme dont les valeurs et le parcours témoignent de son engagement profond dans l’enseignement et la transmission du savoir islamique.
           </p>
           <p className="text-lg leading-relaxed mb-4">
-            Notre enseignant a complété son Hifz à la madrassah Tanwirous Sibyâne de Saint Paul en 2005 à l’âge de 15 ans. Après l’obtention de son bac ES en 2008, il a choisi de partir en Inde où il a étudié dans une institution prestigieuse, notamment à l’Université Islamique de Falahé Daarain à Tadkeshwar, dans l’État du Gujrat en Inde, où il a approfondi ses connaissances en sciences islamiques de 2008 à 2014, en particulier dans les domaines du Qour’aan ( Tadjweed et Qiraat) , du Tafseer, des Ahaadiths, de la jurisprudence (Fiqh) et de la langue arabe et ourdou. Cette formation lui a permis de recevoir une éducation rigoureuse et de développer une expertise dans son domaine.
-            Il a commencé sa mission à Plateau Caillou le 1er octobre 2015 en tant qu’enseignant et Imam.
-            Il a poursuivi et terminé parallèlement ses études à Riyadhoul Ouloum à Saint-Pierre de La Réunion de 2015 à 2017, où il a continué à affiner son savoir et sa compréhension des enseignements islamiques et des grands recueils de Ahaadiths (Boukhari, Mouslim…) Il fut en 2018 le premier diplômé de cet institut qui a ouvert ses portes en 2014 à St Pierre (Île de la Réunion).
+            Notre enseignant a complété son Hifz à la Madressah Tanwirous Sibyâne de Saint-Paul en 2005 à l'âge de 15 ans. Après l'obtention de son bac ES en 2008, il a choisi de partir en Inde où il a étudié dans une institution prestigieuse, notamment à l'Université islamique de Falahé Daarain à Tadkeshwar, dans l'État du Gujarat en Inde, où il a approfondi ses connaissances en sciences islamiques de 2008 à 2014, en particulier dans les domaines du Qour'aan (Tadjweed et Qiraat), du Tafseer, des Ahaadiths, de la jurisprudence (Fiqh) et de la langue arabe et ourdou. Cette formation lui a permis de recevoir une éducation rigoureuse et de développer une expertise dans son domaine.
+            Il a commencé sa mission à Plateau Caillou le 1er octobre 2015 en tant qu'enseignant et imam.
+            Il a poursuivi et terminé parallèlement ses études à Riyadhoul Ouloum à Saint-Pierre de 2015 à 2017, où il a continué à affiner son savoir et sa compréhension des enseignements islamiques et des grands recueils de Ahaadiths (Boukhari, Mouslim…). Il fut en 2018 le premier diplômé de cet institut qui a ouvert ses portes en 2014 à Saint-Pierre.
           </p>
           <p className="text-lg leading-relaxed">
-            Mw Ahmad Mamode a également complété son cursus de Qiraat Sab’ah (7 variantes de lecture du Qour’aan) en 2022.
-            Fort de ces expériences, notre enseignant est un véritable atout pour notre communauté. Son dévouement à l’enseignement et sa capacité à transmettre les principes fondamentaux de notre foi avec sagesse et clarté font de lui un modèle pour nos élèves. Nous sommes heureux de l’avoir parmi nous pour guider nos jeunes générations sur le chemin du savoir et de la vertu.
-            Qu’Allah lui accorde longévité, sincérité, humilité, constance et succès dans sa noble mission! Âmine!
+            Mw Ahmad Mamode a également complété son cursus de Qiraat Sab'ah (7 variantes de lecture du Qour'aan) en 2022.
+            Fort de ces expériences, notre enseignant est un véritable atout pour notre communauté. Son dévouement à l'enseignement et sa capacité à transmettre les principes fondamentaux de notre foi avec sagesse et clarté font de lui un modèle pour nos élèves. Nous sommes heureux de l'avoir parmi nous pour guider nos jeunes générations sur le chemin du savoir et de la vertu.
+            Qu'Allah lui accorde longévité, sincérité, humilité, constance et succès dans sa noble mission ! Amine !
           </p>
         </div>
         </div>
@@ -485,7 +483,7 @@ export default function MadressahPage() {
           Parrainage pour les élèves
         </h2>
         <p className="text-lg text-darkGray/80 mb-6 max-w-2xl mx-auto">
-          Vous souhaitez aider les élèves de la Madressah? Vous pouvez parrainer un
+          Vous souhaitez aider les élèves de la Madressah ?<br/>Vous pouvez parrainer un
           enfant pour lui permettre de suivre les cours.
         </p>
         <Button asChild size="lg">

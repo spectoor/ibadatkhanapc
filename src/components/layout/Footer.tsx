@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {email, facebookUrl, helloAssoUrl, telephoneImame, telephonePresident} from "@/lib/config";
+import {ExternalLinkIcon} from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -34,8 +35,16 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
+                {/*  external link */}
                 <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Adresse</p>
-                <p className="text-white text-lg">Plateau Caillou (en face de la Poste)<br />14 rue Paul Ferrand 97460 Saint-Paul</p>
+                    <Link href="https://maps.app.goo.gl/2YMsquVp9SDYxeRn9" target="_blank" rel="noopener noreferrer">
+                      <p className="text-white text-lg">
+                        Plateau Caillou (en face de la Poste)
+                        <br/>
+                        14 rue Paul Ferrand
+                        <br />97460 Saint-Paul
+                      </p>
+                    </Link>
               </div>
             </div>
 
