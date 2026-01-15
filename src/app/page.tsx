@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {facebookUrl, prayerTimes} from "@/lib/config";
+import {getSunset} from "sunrise-sunset-js";
 
 export default function Home() {
   return (
@@ -141,7 +142,13 @@ export default function Home() {
                 {prayerTimes.map((element) => (
                   <div key={element.prayer} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 flex-shrink-0 basis-[calc(33.333%-1rem)] md:basis-auto md:flex-1">
                     <p className="text-amber-100 text-sm font-medium mb-2 text-center">{element.prayer}</p>
-                    <p className="text-gold text-2xl font-bold text-center">{element.time}</p>
+                    <p className="text-gold text-2xl font-bold text-center">
+                      {
+                        element.prayer === 'Mahgrib' ?
+                          getSunset(-21.0094, 55.2708, new Date())?.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: false }) :
+                          element.time
+                      }
+                    </p>
                   </div>
                 ))}
               </div>

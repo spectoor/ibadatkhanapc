@@ -1,4 +1,3 @@
-import { getSunset } from 'sunrise-sunset-js';
 export const telephonePresident = '+262 692 78 78 13';
 export const telephoneImame = '+262 692 51 52 39';
 
@@ -25,7 +24,7 @@ export const prayerTimes = [
   },
   {
     prayer: 'Mahgrib',
-    time: getSunset(-21.0094, 55.2708, new Date())?.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: false })
+    time: ''
   },
   {
     prayer: 'Isha',

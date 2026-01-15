@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {email, facebookUrl, helloAssoUrl, telephoneImame, telephonePresident} from "@/lib/config";
-import {ExternalLinkIcon} from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -14,6 +13,8 @@ export default function Footer() {
     { href: facebookUrl, label: "Notre actualité", external: true },
     { href: helloAssoUrl, label: "Faire un don", external: true },
   ];
+
+  const year = (new Date).getFullYear();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, external?: boolean) => {
     if (!external && pathname === href) {
@@ -123,7 +124,7 @@ export default function Footer() {
 
       <div className="border-t border-slate-800 mt-12 pt-8 text-center">
         <p className="text-slate-500">
-          Association Musulmane Sunnite de Plateau Caillou © {(new Date).getFullYear()}
+          Association Musulmane Sunnite de Plateau Caillou © {year}
         </p>
         <p className="text-slate-500">
           Tous droits réservés
