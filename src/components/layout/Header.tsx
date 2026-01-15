@@ -93,7 +93,7 @@ export default function Header() {
               className="block text-slate-700 hover:text-deep-green transition-colors py-2"
               onClick={(e) => handleNavClick(e, '/')}
             >
-              Accueil
+              L&apos;Ibadat Khana
             </Link>
             <Link
               href="/madressah"
