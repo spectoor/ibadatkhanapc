@@ -271,6 +271,7 @@ export default function MadressahPage() {
             <h3 className="text-xl font-semibold text-gold mb-4">Programme d&apos;enseignement</h3>
             <ul className="list-disc list-inside space-y-2">
               <li>Apprentissage de la lecture du Coran (Tajwid)</li>
+              <li>Mémorisation du Coran (Hifz)</li>
               <li>Bases de la foi islamique (Aqida)</li>
               <li>Pratiques religieuses (Fiqh)</li>
               <li>Histoire islamique</li>

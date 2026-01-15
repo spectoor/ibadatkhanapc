@@ -180,7 +180,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Soutenez notre association</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mx-auto">
             {/* Dons Ibadat */}
               <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                 <Link href={'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou/collectes/recolte-de-don'} target="_blank" rel="noopener noreferrer">
@@ -231,6 +231,24 @@ export default function Home() {
                 <div className="p-8 bg-white">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">Parrainer un élève</h3>
                   <p className="text-slate-600">En parrainant un enfant, vous lui offrez l’opportunité d’accéder aux cours.</p>
+                </div>
+              </Link>
+            </div>
+
+            {/* Dons hifz */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <Link href={'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou/formulaires/6'} target="_blank" rel="noopener noreferrer">
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src="/dons-hifz.jpg"
+                    alt="Classe Hifz"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 bg-white">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Soutenez la classe Hifz</h3>
+                  <p className="text-slate-600">À travers la classe Hifz, nous œuvrons pour former une génération attachée au Coran. Soutenez cette mission essentielle et investissez dans l’avenir de la Oumma.</p>
                 </div>
               </Link>
             </div>
