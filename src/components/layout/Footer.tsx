@@ -12,6 +12,7 @@ export default function Footer() {
     { href: "/", label: "L'Ibadat Khana" },
     { href: "/madressah", label: "La Madressah" },
     { href: facebookUrl, label: "Notre actualité", external: true },
+    { href: helloAssoUrl, label: "Faire un don", external: true },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, external?: boolean) => {
@@ -36,8 +37,8 @@ export default function Footer() {
               </div>
               <div>
                 {/*  external link */}
-                <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Adresse</p>
-                    <Link href="https://maps.app.goo.gl/2YMsquVp9SDYxeRn9" target="_blank" rel="noopener noreferrer">
+                  <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Adresse</p>
+                      <Link href="https://maps.app.goo.gl/2YMsquVp9SDYxeRn9" target="_blank" rel="noopener noreferrer">
                       <p className="text-white text-lg">
                         Plateau Caillou (en face de la Poste)
                         <br/>
@@ -55,8 +56,10 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Madressah</p>
-                <p className="text-white text-lg">Enseignement religieux<br />pour enfants et adolescents</p>
+                <Link href="/madressah" onClick={(e) => handleNavClick(e, "/madressah", false)}>
+                  <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Madressah</p>
+                  <p className="text-white text-lg">Enseignement religieux<br />pour enfants et adolescents</p>
+                </Link>
               </div>
             </div>
 
@@ -93,9 +96,6 @@ export default function Footer() {
             <li><Link href={`mailto:${email}`} className="text-slate-400 hover:text-gold transition-colors">Email: {email}</Link></li>
             <li><Link href={`tel:${telephonePresident}`} className="text-slate-400 hover:text-gold transition-colors">Téléphone Président: {telephonePresident}</Link></li>
             <li><Link href={`tel:${telephoneImame}`} className="text-slate-400 hover:text-gold transition-colors">Téléphone Imam: {telephoneImame}</Link></li>
-            <li><Link href={helloAssoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer" className="text-slate-400 hover:text-gold transition-colors">Faire un don</Link></li>
           </ul>
         </div>
 
