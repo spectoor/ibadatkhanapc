@@ -50,7 +50,7 @@ export default function Header() {
               />
             </div>
             <div className="hidden md:block">
-              <h1 className={scrolled ? 'text-2xl font-bold text-deep-green tracking-tight' : 'text-2xl font-bold text-gold tracking-tight'}>Ibadat Khana Plateau Caillou</h1>
+              <h1 className={scrolled ? 'text-2xl font-bold text-deep-green tracking-tight' : 'text-2xl font-bold text-gold tracking-tight'}>Ibadat Khana Noor-e-Habibia</h1>
               <p className={scrolled ? 'text-sm text-dark-gray' : 'text-sm text-white'}>Saint-Paul</p>
             </div>
           </Link>

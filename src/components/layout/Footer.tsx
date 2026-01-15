@@ -82,7 +82,7 @@ export default function Footer() {
         {/* Logo & Description */}
         <div className="md:col-span-2 space-y-6">
           <div className="flex items-center space-x-3">
-            <h3 className="text-xl font-bold text-white">Ibadat Khana Plateau Caillou</h3>
+            <h3 className="text-xl font-bold text-white">Ibadat Khana Noor-e-Habibia</h3>
           </div>
           <p className="text-slate-400 leading-relaxed max-w-md">
             L&apos;Ibadat Khana de Plateau Caillou accueille la communauté musulmane pour les prières régulières, ainsi que la prière du vendredi et propose des cours d&apos;enseignement religieux pour enfants et adolescents.

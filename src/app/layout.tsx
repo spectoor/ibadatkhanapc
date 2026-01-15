@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Ibadat Khana - Association Musulmane Sunnite de Plateau Caillou",
+  title: "Ibadat Khana Noor-e-Habibia",
   description: "Association Musulmane Sunnite de Plateau Caillou - Ibadat Khana et Madressah",
 };
 
