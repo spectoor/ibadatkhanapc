@@ -19,13 +19,24 @@ export default function Home() {
 
     if (sunset) {
       // Convertir au fuseau horaire de la Réunion (UTC+4)
-      const reunionTime = sunset.toLocaleTimeString('fr-FR', {
+      const reunionFormatter = new Intl.DateTimeFormat('fr-FR', {
         hour: '2-digit',
         minute: '2-digit',
         hour12: false,
         timeZone: 'Indian/Reunion'
       });
-      setMahgribTime(reunionTime);
+      const parts = reunionFormatter.formatToParts(sunset);
+      let hours = parseInt(parts.find(p => p.type === 'hour')?.value || '0');
+      const minutes = parseInt(parts.find(p => p.type === 'minute')?.value || '0');
+
+      // Arrondir à la dizaine de minutes supérieure
+      const roundedMinutes = Math.ceil(minutes / 10) * 10;
+      if (roundedMinutes === 60) {
+        hours = (hours + 1) % 24;
+        setMahgribTime(`${hours.toString().padStart(2, '0')}:00`);
+      } else {
+        setMahgribTime(`${hours.toString().padStart(2, '0')}:${roundedMinutes.toString().padStart(2, '0')}`);
+      }
     }
   }, []);
 
