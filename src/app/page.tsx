@@ -98,6 +98,8 @@ export default function Home() {
                 <Link
                   href={facebookUrl}
                   className="inline-flex items-center space-x-2 text-deep-green/80 hover:text-deep-green font-semibold group"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span>Notre actualité</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

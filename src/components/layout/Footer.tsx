@@ -71,8 +71,9 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Communauté</p>
-                <p className="text-white text-lg">Activités communautaires<br />et fêtes islamiques</p>
+                <Link href={facebookUrl} target="_blank" rel="noopener noreferrer">
+                  <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-2">Communauté</p>
+                  <p className="text-white text-lg">Activités communautaires<br />et fêtes islamiques</p></Link>
               </div>
             </div>
           </div>
