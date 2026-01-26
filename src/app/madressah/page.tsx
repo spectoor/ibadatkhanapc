@@ -349,7 +349,7 @@ export default function MadressahPage() {
             <h3 className="text-xl font-semibold text-darkGray mb-3">Cours réguliers</h3>
             <div className="text-darkGray/80 space-y-2">
               {
-                madressahTimes.map(element => (<p><strong>{element.days}</strong>&nbsp;:&nbsp;{element.time}</p>))
+                madressahTimes.map(element => (<p key={element.days}><strong>{element.days}</strong>&nbsp;:&nbsp;{element.time}</p>))
               }
             </div>
           </div>
@@ -519,7 +519,7 @@ export default function MadressahPage() {
           Vous souhaitez aider les élèves de la Madressah ?<br/>Vous pouvez parrainer un
           enfant pour lui permettre de suivre les cours.
         </p>
-        <Button asChild size="lg">
+        <Button aschild size="lg">
           <Link
             href={helloAssoUrl + '/formulaires/3'}
             target="_blank"
