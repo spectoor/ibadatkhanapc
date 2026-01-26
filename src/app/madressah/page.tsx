@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { jsPDF } from "jspdf";
 import {helloAssoUrl, madressahTimes} from "@/lib/config";
+import Script from 'next/script';
 
 export default function MadressahPage() {
   const [formData, setFormData] = useState({
@@ -225,8 +226,39 @@ export default function MadressahPage() {
     generatePDF();
   };
 
+  // Structured Data pour la Madressah
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://ibadatkhanapc.fr/madressah#organization",
+    "name": "Madressah de Plateau Caillou",
+    "alternateName": "École Coranique Noor-e-Habibia",
+    "url": "https://ibadatkhanapc.fr/madressah",
+    "description": "École coranique pour l'enseignement du Coran, Tajwid, Hifz, Aqida, Fiqh et histoire islamique",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plateau Caillou",
+      "addressLocality": "Saint-Paul",
+      "addressRegion": "La Réunion",
+      "postalCode": "97460",
+      "addressCountry": "FR"
+    },
+    "image": "https://ibadatkhanapc.fr/madressah.jpg",
+    "offers": {
+      "@type": "Offer",
+      "category": "Enseignement religieux",
+      "description": "Cours de Coran, Tajwid, Hifz, Aqida, Fiqh pour enfants et adolescents"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-stone-50">
+      {/* Structured Data JSON-LD */}
+      <Script
+        id="structured-data-madressah"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -238,9 +270,9 @@ export default function MadressahPage() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-fadeInUp">
-            <h2 className="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
               La <span className="text-gold">Madressah</span><br/>de Plateau Caillou
-            </h2>
+            </h1>
 
             <p className="text-xl md:text-2xl text-amber-100 max-w-2xl mx-auto">
               Pour les enfants et adolescents

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {facebookUrl, prayerTimes} from "@/lib/config";
 import {getSunset} from "sunrise-sunset-js";
 import {useEffect, useState} from "react";
+import Script from 'next/script';
 
 export default function Home() {
   const [displaySocial, setDisplaySocial] = useState(false);
@@ -40,8 +41,72 @@ export default function Home() {
     }
   }, []);
 
+  // Structured Data pour le SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Mosque",
+        "@id": "https://ibadatkhanapc.fr/#organization",
+        "name": "Ibadat Khana Noor-e-Habibia",
+        "alternateName": "AMSPC - Association Musulmane Sunnite de Plateau Caillou",
+        "url": "https://ibadatkhanapc.fr",
+        "logo": "https://ibadatkhanapc.fr/logo-ibadat.png",
+        "image": "https://ibadatkhanapc.fr/ibadat.jpg",
+        "description": "Mosquée et école coranique de Plateau Caillou à Saint-Paul, La Réunion",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plateau Caillou",
+          "addressLocality": "Saint-Paul",
+          "addressRegion": "La Réunion",
+          "postalCode": "97460",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -21.0094,
+          "longitude": 55.2708
+        },
+        "sameAs": [
+          facebookUrl
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ibadatkhanapc.fr/#website",
+        "url": "https://ibadatkhanapc.fr",
+        "name": "Ibadat Khana Noor-e-Habibia",
+        "description": "Site officiel de l'Ibadat Khana de Plateau Caillou",
+        "publisher": {
+          "@id": "https://ibadatkhanapc.fr/#organization"
+        },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ibadatkhanapc.fr/#webpage",
+        "url": "https://ibadatkhanapc.fr",
+        "name": "Ibadat Khana Noor-e-Habibia - Plateau Caillou, La Réunion",
+        "isPartOf": {
+          "@id": "https://ibadatkhanapc.fr/#website"
+        },
+        "about": {
+          "@id": "https://ibadatkhanapc.fr/#organization"
+        },
+        "description": "Mosquée et Madressah de Plateau Caillou à Saint-Paul, La Réunion. Prières quotidiennes, enseignement coranique et solidarité communautaire.",
+        "inLanguage": "fr-FR"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-stone-50">
+      {/* Structured Data JSON-LD */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -53,11 +118,11 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-fadeInUp">
-            <h2 className="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
               Bienvenue à<br />
               <span className="text-gold">l&apos;Ibadat Khana</span><br />
               de Plateau Caillou
-            </h2>
+            </h1>
 
             <p className="text-xl md:text-2xl text-amber-100 max-w-2xl mx-auto">
               Un lieu de culte, d&apos;enseignement et de fraternité à Saint-Paul
@@ -112,9 +177,10 @@ export default function Home() {
             <div className="relative h-96 md:h-125 rounded-2xl overflow-hidden shadow-2xl animate-fadeInRight">
               <Image
                 src="/ibadat.jpg"
-                alt="Ibadat Khana"
+                alt="Ibadat Khana Noor-e-Habibia de Plateau Caillou à Saint-Paul, La Réunion - Lieu de prière et d'enseignement islamique"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
+                priority
               />
             </div>
           </div>
@@ -128,7 +194,7 @@ export default function Home() {
             <div className="relative h-96 md:h-125 rounded-2xl overflow-hidden shadow-2xl animate-fadeInRight">
               <Image
                 src="/madressah.jpg"
-                alt="Ibadat Khana"
+                alt="Madressah de Plateau Caillou - École coranique pour l'enseignement du Coran et des sciences islamiques aux enfants et adolescents"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -178,7 +244,7 @@ export default function Home() {
 
               <div className="flex flex-wrap justify-center gap-6 mb-8 md:flex-nowrap">
                 {prayerTimes.map((element) => (
-                  <div key={element.prayer} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 flex-shrink-0 basis-[calc(33.333%-1rem)] md:basis-auto md:flex-1">
+                  <div key={element.prayer} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 shrink-0 basis-[calc(33.333%-1rem)] md:basis-auto md:flex-1">
                     <p className="text-amber-100 text-sm font-medium mb-2 text-center">{element.prayer}</p>
                     <p className="text-gold text-2xl font-bold text-center">
                       {element.prayer === 'Mahgrib' ? mahgribTime : element.time}
@@ -207,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* Dons Section */}
-      <section className="py-12 bg-gradient-to-br from-slate-50 to-amber-50/30">
+      <section className="py-12 bg-linear-to-br from-slate-50 to-amber-50/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
             <p className="text-deep-green/85 font-bold uppercase tracking-wider text-md">Dons</p>
@@ -221,7 +287,7 @@ export default function Home() {
                   <div className="aspect-video relative overflow-hidden">
                     <Image
                       src="/dons-ibadat.jpg"
-                      alt="Dons à l'Ibadat Khana"
+                      alt="Faire un don pour soutenir l'Ibadat Khana de Plateau Caillou - Contribuez au fonctionnement de la mosquée"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -239,7 +305,7 @@ export default function Home() {
                 <div className="aspect-video relative overflow-hidden">
                   <Image
                     src="/dons-projets.jpg"
-                    alt="Financement des projets"
+                    alt="Financement des projets de rénovation et d'amélioration de l'Ibadat Khana et de la Madressah"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -257,7 +323,7 @@ export default function Home() {
                 <div className="aspect-video relative overflow-hidden">
                   <Image
                     src="/dons-parrainage.jpg"
-                    alt="Parrainer un élève"
+                    alt="Parrainer un élève de la Madressah - Offrir l'accès à l'éducation islamique aux enfants"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -275,7 +341,7 @@ export default function Home() {
                 <div className="aspect-video relative overflow-hidden">
                   <Image
                     src="/dons-hifz.jpg"
-                    alt="Classe Hifz"
+                    alt="Soutenir la classe Hifz - Mémorisation du Coran pour former une génération de Huffaz"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />

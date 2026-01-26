@@ -1,0 +1,28 @@
+{
+  "name": "Ibadat Khana Noor-e-Habibia - Plateau Caillou",
+  "short_name": "Ibadat Khana PC",
+  "description": "Mosquée et Madressah de Plateau Caillou à Saint-Paul, La Réunion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f4",
+  "theme_color": "#1e4a30",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-ibadat.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-ibadat.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "categories": ["religious", "education"],
+  "screenshots": []
+}

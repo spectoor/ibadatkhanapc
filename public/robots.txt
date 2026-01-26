@@ -1,0 +1,12 @@
+# Robots.txt pour Ibadat Khana Noor-e-Habibia
+# https://ibadatkhanapc.fr/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ibadatkhanapc.fr/sitemap.xml
+
+# Disallow admin or private areas (ajoutez si nécessaire)
+# Disallow: /admin/
+# Disallow: /api/
