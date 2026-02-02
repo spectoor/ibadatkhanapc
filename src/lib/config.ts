@@ -8,7 +8,7 @@ export const helloAssoUrl = 'https://www.helloasso.com/associations/association-
 export const prayerTimes = [
   {
     prayer: 'Fadjr',
-    time: '05:15'
+    time: '05:20'
   },
   {
     prayer: 'Zohr',
@@ -28,7 +28,7 @@ export const prayerTimes = [
   },
   {
     prayer: 'Isha',
-    time: '20:40'
+    time: '20:35'
   },
 ];
 
