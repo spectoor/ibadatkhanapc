@@ -4,12 +4,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {facebookUrl, prayerTimes} from "@/lib/config";
 import {getSunset} from "sunrise-sunset-js";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import Script from 'next/script';
 
 export default function Home() {
   const [displaySocial, setDisplaySocial] = useState(false);
   const [mahgribTime, setMahgribTime] = useState('--:--');
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const prayerSectionRef = useRef<HTMLElement>(null);
+
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      prayerSectionRef.current?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }, []);
+
+  useEffect(() => {
+    const onFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', onFullscreenChange);
+  }, []);
 
   useEffect(() => {
     setDisplaySocial(true);
@@ -232,7 +248,11 @@ export default function Home() {
       </section>
 
       {/* Prayer Times Section */}
-      <section id="horaires-priere" className="py-12 bg-linear-to-br from-slate-50 to-amber-50/30 scroll-mt-20">
+      <section
+        ref={prayerSectionRef}
+        id="horaires-priere"
+        className={`bg-linear-to-br from-slate-50 to-amber-50/30 scroll-mt-20 ${isFullscreen ? 'flex items-center justify-center min-h-screen' : 'py-12'}`}
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Horaires de prière</h2>
@@ -253,6 +273,27 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            <button
+              onClick={toggleFullscreen}
+              className="inline-flex items-center gap-2 px-6 py-3  text-deep-green/80 hover:text-deep-green cursor-pointer rounded-xl transition-colors duration-300 text-sm font-medium"
+            >
+              {isFullscreen ? (
+                <>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25" />
+                  </svg>
+                  Quitter le plein écran
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                  </svg>
+                  Plein écran
+                </>
+              )}
+            </button>
           </div>
         </div>
       </section>
