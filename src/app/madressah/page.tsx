@@ -372,6 +372,22 @@ export default function MadressahPage() {
         <h2 className="text-3xl md:text-4xl font-bold text-darkGray mb-6">
           Formulaire d&apos;inscription
         </h2>
+
+        {/* Bloc liste d'attente */}
+        <div className="max-w-3xl mx-auto mb-6 bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6">
+          <div className="flex items-start gap-3">
+            <svg className="w-6 h-6 text-amber-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <h3 className="text-lg font-semibold text-amber-800">Inscription sur liste d&apos;attente</h3>
+              <p className="text-amber-700 mt-1">
+                En raison du nombre important d&apos;enfants déjà inscrits, les nouvelles inscriptions sont actuellement enregistrées sur <strong>liste d&apos;attente</strong>. Vous serez contacté(e) dès qu&apos;une place se libère, incha&apos;Allah. Veuillez remplir le formulaire ci-dessous, l&apos;imprimer et le remettre directement à l&apos;Imam Mw Ahmad Mamode.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -519,7 +535,7 @@ export default function MadressahPage() {
           Vous souhaitez aider les élèves de la Madressah ?<br/>Vous pouvez parrainer un
           enfant pour lui permettre de suivre les cours.
         </p>
-        <Button aschild size="lg">
+        <Button aschild={true} size="lg">
           <Link
             href={helloAssoUrl + '/formulaires/3'}
             target="_blank"
