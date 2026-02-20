@@ -9,6 +9,15 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/dons',
+        destination: 'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou',
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {
