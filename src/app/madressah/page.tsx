@@ -354,9 +354,9 @@ export default function MadressahPage() {
             </div>
           </div>
           <div className="bg-lightGray rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-darkGray mb-3">Cours vacances scolaires</h3>
+            <h3 className="text-xl font-semibold text-darkGray mb-3">Cours vacances scolaires Mars 2026</h3>
             <div className="text-darkGray/80 space-y-2">
-              <p>Veuillez nous contacter pour confirmation.</p>
+              <p><strong>Lundi - Mardi - Mercredi - Jeudi - Vendredi</strong>&nbsp;:&nbsp;16h00 - 17h40</p>
             </div>
           </div>
         </div>

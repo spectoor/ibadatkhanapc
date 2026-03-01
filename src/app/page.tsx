@@ -9,7 +9,7 @@ import Script from 'next/script';
 
 export default function Home() {
   const [displaySocial, setDisplaySocial] = useState(false);
-  const [mahgribTime, setMahgribTime] = useState('--:--');
+  const [magribhTime, setMagribhTime] = useState('--:--');
   const [isFullscreen, setIsFullscreen] = useState(false);
   const prayerSectionRef = useRef<HTMLElement>(null);
 
@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     setDisplaySocial(true);
 
-    // Calculer l'heure de Mahgrib avec le fuseau horaire de la Réunion
+    // Calculer l'heure de Magribh avec le fuseau horaire de la Réunion
     const now = new Date();
     const sunset = getSunset(-21.0094, 55.2708, now);
 
@@ -50,9 +50,9 @@ export default function Home() {
       const roundedMinutes = Math.ceil(minutes / 10) * 10;
       if (roundedMinutes === 60) {
         hours = (hours + 1) % 24;
-        setMahgribTime(`${hours.toString().padStart(2, '0')}:00`);
+        setMagribhTime(`${hours.toString().padStart(2, '0')}:00`);
       } else {
-        setMahgribTime(`${hours.toString().padStart(2, '0')}:${roundedMinutes.toString().padStart(2, '0')}`);
+        setMagribhTime(`${hours.toString().padStart(2, '0')}:${roundedMinutes.toString().padStart(2, '0')}`);
       }
     }
   }, []);
@@ -267,7 +267,7 @@ export default function Home() {
                   <div key={element.prayer} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 shrink-0 basis-[calc(33.333%-1rem)] md:basis-auto md:flex-1">
                     <p className="text-amber-100 text-sm font-medium mb-2 text-center">{element.prayer}</p>
                     <p className="text-gold text-2xl font-bold text-center">
-                      {element.prayer === 'Mahgrib' ? mahgribTime : element.time}
+                      {element.prayer === 'Magribh' ? magribhTime : element.time}
                     </p>
                   </div>
                 ))}
