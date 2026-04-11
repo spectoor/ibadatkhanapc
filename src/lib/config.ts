@@ -20,7 +20,7 @@ export const prayerTimes = [
   },
   {
     prayer: 'Assr',
-    time: '17:30'
+    time: '17:00'
   },
   {
     prayer: 'Magribh',
@@ -28,7 +28,7 @@ export const prayerTimes = [
   },
   {
     prayer: 'Icha',
-    time: '20:15'
+    time: '19:45'
   },
 ];
 
