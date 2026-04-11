@@ -3,7 +3,7 @@ export const telephoneImame = '+262 692 51 52 39';
 
 export const email = 'ibadatkhanapc@gmail.com';
 
-export const facebookUrl = 'https://www.facebook.com/IbadatKhanaPlateauCaillou/?locale=fr_FR';
+export const facebookUrl = 'https://www.facebook.com/people/ibadat-khana-plateau-caillou-Officiel/61585738187835/';
 export const helloAssoUrl = 'https://www.helloasso.com/associations/association-musulmane-sunnite-de-plateau-caillou';
 export const prayerTimes = [
   {
