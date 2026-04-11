@@ -91,43 +91,6 @@ export default function Home() {
         "telephone": "+262692787813",
         "email": "ibadatkhanapc@gmail.com",
         "hasMap": "https://maps.google.com/?q=-21.0094,55.2708",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "name": "Prière Fadjr",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "05:35",
-            "closes": "06:15"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "name": "Prière Zohr",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Saturday","Sunday"],
-            "opens": "13:00",
-            "closes": "13:30"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "name": "Prière du Vendredi Djoum'ah",
-            "dayOfWeek": ["Friday"],
-            "opens": "12:50",
-            "closes": "14:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "name": "Prière Assr",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "17:00",
-            "closes": "17:30"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "name": "Prière Icha",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "19:45",
-            "closes": "20:15"
-          }
-        ],
         "sameAs": [facebookUrl]
       },
       {
@@ -172,7 +135,7 @@ export default function Home() {
             "name": "Quels sont les horaires des prières à l'Ibadat Khana de Plateau Caillou ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Les horaires de prière à l'Ibadat Khana Noor-e-Habibia sont : Fadjr à 05h35, Zohr à 13h00, Djoum'ah (prière du vendredi) à 12h50, Assr à 17h00, Magribh calculé dynamiquement au coucher du soleil chaque jour, et Icha à 19h45."
+              "text": "Les horaires de prière à l'Ibadat Khana Noor-e-Habibia sont actualisés régulièrement et consultables sur le site ibadatkhanapc.fr. La prière du Magribh est calculée chaque jour à partir de l'heure précise du coucher du soleil à Plateau Caillou."
             }
           },
           {
@@ -418,7 +381,7 @@ export default function Home() {
               <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
                 <dt className="text-lg font-semibold text-slate-900 mb-2">Quels sont les horaires des prières ?</dt>
                 <dd className="text-slate-600 leading-relaxed">
-                  Les prières sont organisées chaque jour : <strong>Fadjr à 05h35</strong>, <strong>Zohr à 13h00</strong>, <strong>Djoum&apos;ah (vendredi) à 12h50</strong>, <strong>Assr à 17h00</strong>, <strong>Magribh</strong> calculé au coucher du soleil chaque jour, et <strong>Icha à 19h45</strong>.
+                  Les horaires sont actualisés régulièrement. Consultez la section ci-dessus pour les horaires du jour.
                 </dd>
               </div>
               <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
