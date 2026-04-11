@@ -226,29 +226,145 @@ export default function MadressahPage() {
     generatePDF();
   };
 
-  // Structured Data pour la Madressah
+  // Structured Data pour la Madressah (GEO optimisé)
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "@id": "https://ibadatkhanapc.fr/madressah#organization",
-    "name": "Madressah de Plateau Caillou",
-    "alternateName": "École Coranique Noor-e-Habibia",
-    "url": "https://ibadatkhanapc.fr/madressah",
-    "description": "École coranique pour l'enseignement du Coran, Tajwid, Hifz, Aqida, Fiqh et histoire islamique",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Plateau Caillou",
-      "addressLocality": "Saint-Paul",
-      "addressRegion": "La Réunion",
-      "postalCode": "97460",
-      "addressCountry": "FR"
-    },
-    "image": "https://ibadatkhanapc.fr/madressah.jpg",
-    "offers": {
-      "@type": "Offer",
-      "category": "Enseignement religieux",
-      "description": "Cours de Coran, Tajwid, Hifz, Aqida, Fiqh pour enfants et adolescents"
-    }
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://ibadatkhanapc.fr/madressah#organization",
+        "name": "Madressah de Plateau Caillou",
+        "alternateName": ["École Coranique Noor-e-Habibia", "École coranique de Plateau Caillou"],
+        "url": "https://ibadatkhanapc.fr/madressah",
+        "description": "La Madressah de Plateau Caillou est une école coranique islamique à Saint-Paul, La Réunion, proposant des cours de Tajwid, Hifz (mémorisation du Coran), Aqida, Fiqh, histoire islamique et Akhlaq pour les enfants et adolescents de la communauté musulmane. La cotisation est de 10€ par mois ou 100€ par an.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plateau Caillou",
+          "addressLocality": "Saint-Paul",
+          "addressRegion": "La Réunion",
+          "postalCode": "97460",
+          "addressCountry": "FR"
+        },
+        "telephone": "+262692515239",
+        "email": "ibadatkhanapc@gmail.com",
+        "image": "https://ibadatkhanapc.fr/madressah.jpg",
+        "parentOrganization": {
+          "@id": "https://ibadatkhanapc.fr/#organization"
+        },
+        "employee": {
+          "@type": "Person",
+          "@id": "https://ibadatkhanapc.fr/madressah#imam",
+          "name": "Mw Ahmad Mamode",
+          "jobTitle": "Imam et enseignant",
+          "description": "Imam et enseignant de la Madressah de Plateau Caillou depuis le 1er octobre 2015. Hafiz du Coran depuis 2005. Diplômé de l'Université islamique de Falahé Daarain (Gujarat, Inde, 2008-2014) en sciences islamiques, Tadjweed, Qiraat, Tafseer, Ahaadiths et Fiqh. Premier diplômé de l'Institut Riyadhoul Ouloum (Saint-Pierre, 2015-2017). Certifié en Qiraat Sab'ah (7 variantes de lecture du Coran) en 2022.",
+          "knowsAbout": ["Tajwid", "Hifz", "Qiraat Sab'ah", "Tafseer", "Fiqh", "Ahaadiths", "Langue arabe", "Langue ourdou"]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Programme d'enseignement islamique",
+          "itemListElement": [
+            {
+              "@type": "Course",
+              "name": "Tajwid - Récitation du Coran",
+              "description": "Apprentissage des règles de récitation et de prononciation correcte du Saint Coran selon les règles de Tajwid.",
+              "provider": { "@id": "https://ibadatkhanapc.fr/madressah#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Hifz - Mémorisation du Coran",
+              "description": "Programme complet de mémorisation du Coran pour former des Huffaz (mémorisateurs du Coran).",
+              "provider": { "@id": "https://ibadatkhanapc.fr/madressah#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Aqida - Croyances islamiques",
+              "description": "Étude des bases de la foi islamique (Aqida) selon les principes de l'Islam sunnite.",
+              "provider": { "@id": "https://ibadatkhanapc.fr/madressah#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Fiqh - Jurisprudence islamique",
+              "description": "Apprentissage des pratiques religieuses et de la jurisprudence islamique (Fiqh).",
+              "provider": { "@id": "https://ibadatkhanapc.fr/madressah#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Histoire islamique et Sirah",
+              "description": "Étude de l'histoire de l'Islam et de la vie du Prophète Muhammad (Paix et bénédictions sur lui).",
+              "provider": { "@id": "https://ibadatkhanapc.fr/madressah#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Akhlaq - Éthique et comportement islamique",
+              "description": "Enseignement des valeurs éthiques et morales islamiques pour former des individus responsables.",
+              "provider": { "@id": "https://ibadatkhanapc.fr/madressah#organization" }
+            }
+          ]
+        },
+        "schedule": [
+          {
+            "@type": "Schedule",
+            "name": "Cours réguliers (hors vacances)",
+            "byDay": ["Monday","Tuesday","Thursday","Friday"],
+            "startTime": "16:15",
+            "endTime": "18:00"
+          },
+          {
+            "@type": "Schedule",
+            "name": "Cours réguliers (hors vacances)",
+            "byDay": ["Wednesday","Saturday"],
+            "startTime": "14:00",
+            "endTime": "16:00"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ibadatkhanapc.fr/madressah#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment inscrire son enfant à la Madressah de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour inscrire votre enfant à la Madressah de Plateau Caillou, remplissez le formulaire d'inscription sur le site ibadatkhanapc.fr/madressah et remettez-le directement à l'Imam Mw Ahmad Mamode. En raison du nombre d'inscrits, les nouvelles inscriptions sont actuellement en liste d'attente."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les cours proposés à la Madressah de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La Madressah de Plateau Caillou propose : Tajwid (récitation du Coran), Hifz (mémorisation du Coran), Aqida (croyances islamiques), Fiqh (jurisprudence islamique), histoire islamique et Sirah, ainsi qu'Akhlaq (éthique et comportement islamique)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les horaires de la Madressah de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les cours se tiennent du lundi au vendredi (sauf mercredi) de 16h15 à 18h00, et le mercredi et samedi de 14h00 à 16h00. Les horaires peuvent varier pendant les vacances scolaires."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le coût des cours à la Madressah ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La cotisation à la Madressah de Plateau Caillou est de 10€ par mois par élève, ou 100€ pour l'année. Cette cotisation participe au fonctionnement de la Madressah et de l'Ibadat Khana."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qui enseigne à la Madressah de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'enseignement est assuré par l'Imam Mw Ahmad Mamode, Hafiz du Coran depuis 2005, diplômé de l'Université islamique de Falahé Daarain en Inde (2008-2014) et premier diplômé de l'Institut Riyadhoul Ouloum à Saint-Pierre (2017). Il est certifié en Qiraat Sab'ah (les 7 variantes de lecture du Coran) depuis 2022."
+            }
+          }
+        ]
+      }
+    ]
   };
 
   return (
@@ -522,6 +638,33 @@ export default function MadressahPage() {
             </div>
           </form>
         </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-8 bg-white" aria-label="Questions fréquentes sur la Madressah">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-darkGray mb-6">
+            Questions fréquentes
+          </h2>
+          <dl className="space-y-4">
+            <div className="bg-lightGray rounded-lg py-2">
+              <dt className="text-lg font-semibold text-darkGray mb-2">Comment inscrire son enfant à la Madressah ?</dt>
+              <dd className="text-darkGray/80 leading-relaxed">Remplissez le formulaire d&apos;inscription ci-dessus et remettez-le directement à l&apos;Imam Mw Ahmad Mamode. En raison du grand nombre d&apos;inscrits, les nouvelles inscriptions sont actuellement enregistrées sur <strong>liste d&apos;attente</strong>.</dd>
+            </div>
+            <div className="bg-lightGray rounded-lg py-2">
+              <dt className="text-lg font-semibold text-darkGray mb-2">Quel est le coût des cours ?</dt>
+              <dd className="text-darkGray/80 leading-relaxed">La cotisation est de <strong>10€ par mois</strong> par élève, ou <strong>100€ pour l&apos;année</strong>. Elle participe au fonctionnement de la Madressah et de l&apos;Ibadat Khana.</dd>
+            </div>
+            <div className="bg-lightGray rounded-lg py-2">
+              <dt className="text-lg font-semibold text-darkGray mb-2">À quel âge peut-on s&apos;inscrire ?</dt>
+              <dd className="text-darkGray/80 leading-relaxed">La Madressah accueille les <strong>enfants et adolescents</strong> de la communauté. Contactez-nous au <strong>+262 692 51 52 39</strong> pour connaître les conditions d&apos;admission selon l&apos;âge et le niveau.</dd>
+            </div>
+            <div className="bg-lightGray rounded-lg py-2">
+              <dt className="text-lg font-semibold text-darkGray mb-2">Qui est l&apos;enseignant de la Madressah ?</dt>
+              <dd className="text-darkGray/80 leading-relaxed">L&apos;Imam <strong>Mw Ahmad Mamode</strong> enseigne à la Madressah depuis octobre 2015. Hafiz du Coran depuis 2005, il est diplômé de l&apos;Université islamique de Falahé Daarain en Inde et certifié en Qiraat Sab&apos;ah (les 7 variantes de lecture du Coran) depuis 2022.</dd>
+            </div>
+          </dl>
         </div>
       </section>
 

@@ -57,7 +57,7 @@ export default function Home() {
     }
   }, []);
 
-  // Structured Data pour le SEO
+  // Structured Data pour le SEO et GEO
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -65,11 +65,16 @@ export default function Home() {
         "@type": "Mosque",
         "@id": "https://ibadatkhanapc.fr/#organization",
         "name": "Ibadat Khana Noor-e-Habibia",
-        "alternateName": "AMSPC - Association Musulmane Sunnite de Plateau Caillou",
+        "alternateName": [
+          "AMSPC",
+          "Association Musulmane Sunnite de Plateau Caillou",
+          "Mosquée de Plateau Caillou",
+          "Mosquée Noor-e-Habibia"
+        ],
         "url": "https://ibadatkhanapc.fr",
         "logo": "https://ibadatkhanapc.fr/logo-ibadat.png",
         "image": "https://ibadatkhanapc.fr/ibadat.jpg",
-        "description": "Mosquée et école coranique de Plateau Caillou à Saint-Paul, La Réunion",
+        "description": "L'Ibadat Khana Noor-e-Habibia est la mosquée de Plateau Caillou à Saint-Paul, La Réunion, gérée par l'Association Musulmane Sunnite de Plateau Caillou (AMSPC). Elle propose des prières en congrégation cinq fois par jour, une école coranique (Madressah) pour les enfants et adolescents, et des activités de solidarité communautaire.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Plateau Caillou",
@@ -83,9 +88,47 @@ export default function Home() {
           "latitude": -21.0094,
           "longitude": 55.2708
         },
-        "sameAs": [
-          facebookUrl
-        ]
+        "telephone": "+262692787813",
+        "email": "ibadatkhanapc@gmail.com",
+        "hasMap": "https://maps.google.com/?q=-21.0094,55.2708",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "name": "Prière Fadjr",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "05:35",
+            "closes": "06:15"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "name": "Prière Zohr",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Saturday","Sunday"],
+            "opens": "13:00",
+            "closes": "13:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "name": "Prière du Vendredi Djoum'ah",
+            "dayOfWeek": ["Friday"],
+            "opens": "12:50",
+            "closes": "14:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "name": "Prière Assr",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "17:00",
+            "closes": "17:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "name": "Prière Icha",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "19:45",
+            "closes": "20:15"
+          }
+        ],
+        "sameAs": [facebookUrl]
       },
       {
         "@type": "WebSite",
@@ -111,6 +154,52 @@ export default function Home() {
         },
         "description": "Mosquée et Madressah de Plateau Caillou à Saint-Paul, La Réunion. Prières quotidiennes, enseignement coranique et solidarité communautaire.",
         "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ibadatkhanapc.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Où se trouve la mosquée de Plateau Caillou à La Réunion ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'Ibadat Khana Noor-e-Habibia est située à Plateau Caillou, Saint-Paul, La Réunion (code postal 97460). C'est la mosquée de la communauté musulmane des hauts de Saint-Paul, dans un quartier en plein développement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les horaires des prières à l'Ibadat Khana de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les horaires de prière à l'Ibadat Khana Noor-e-Habibia sont : Fadjr à 05h35, Zohr à 13h00, Djoum'ah (prière du vendredi) à 12h50, Assr à 17h00, Magribh calculé dynamiquement au coucher du soleil chaque jour, et Icha à 19h45."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Y a-t-il une école coranique à Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, la Madressah de Plateau Caillou est une école coranique rattachée à l'Ibadat Khana Noor-e-Habibia. Elle accueille les enfants et adolescents de la communauté et propose des cours de Tajwid (récitation du Coran), Hifz (mémorisation du Coran), Aqida (croyances islamiques), Fiqh (jurisprudence), histoire islamique et Akhlaq (éthique). L'enseignement est assuré par l'Imam Mw Ahmad Mamode."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment faire un don à l'Ibadat Khana de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous pouvez faire un don à l'Ibadat Khana Noor-e-Habibia via la plateforme HelloAsso. Quatre types de dons sont disponibles : dons généraux à l'Ibadat Khana, financement des projets de rénovation, parrainage d'un élève de la Madressah et soutien à la classe Hifz (mémorisation du Coran)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment contacter l'Ibadat Khana de Plateau Caillou ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous pouvez contacter l'Ibadat Khana Noor-e-Habibia par email à ibadatkhanapc@gmail.com, ou par téléphone au +262 692 78 78 13 (Président de l'AMSPC) ou au +262 692 51 52 39 (Imam Mw Ahmad Mamode)."
+            }
+          }
+        ]
       }
     ]
   };
@@ -309,6 +398,42 @@ export default function Home() {
           {/* Placeholder pour EmbedSocial */}
           <div className="mt-8 text-center text-sm text-slate-500">
             {displaySocial && <div className="powr-social-feed" id="67e24538_1768342281"></div>}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 bg-white" aria-label="Questions fréquentes">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10 space-y-3">
+              <p className="text-deep-green/85 font-bold uppercase tracking-wider text-md">Informations</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Questions fréquentes</h2>
+            </div>
+            <dl className="space-y-6">
+              <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
+                <dt className="text-lg font-semibold text-slate-900 mb-2">Où se trouve la mosquée de Plateau Caillou ?</dt>
+                <dd className="text-slate-600 leading-relaxed">L&apos;Ibadat Khana Noor-e-Habibia est située à <strong>Plateau Caillou, Saint-Paul, La Réunion</strong> (code postal 97460). C&apos;est la mosquée de la communauté musulmane des hauts de Saint-Paul.</dd>
+              </div>
+              <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
+                <dt className="text-lg font-semibold text-slate-900 mb-2">Quels sont les horaires des prières ?</dt>
+                <dd className="text-slate-600 leading-relaxed">
+                  Les prières sont organisées chaque jour : <strong>Fadjr à 05h35</strong>, <strong>Zohr à 13h00</strong>, <strong>Djoum&apos;ah (vendredi) à 12h50</strong>, <strong>Assr à 17h00</strong>, <strong>Magribh</strong> calculé au coucher du soleil chaque jour, et <strong>Icha à 19h45</strong>.
+                </dd>
+              </div>
+              <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
+                <dt className="text-lg font-semibold text-slate-900 mb-2">Y a-t-il une école coranique à Plateau Caillou ?</dt>
+                <dd className="text-slate-600 leading-relaxed">Oui, la <strong>Madressah de Plateau Caillou</strong> est une école coranique qui accueille les enfants et adolescents de la communauté. Elle propose des cours de Tajwid, Hifz, Aqida, Fiqh, histoire islamique et Akhlaq, dispensés par l&apos;Imam Mw Ahmad Mamode. <Link href="/madressah" className="text-deep-green font-medium underline">En savoir plus sur la Madressah.</Link></dd>
+              </div>
+              <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
+                <dt className="text-lg font-semibold text-slate-900 mb-2">Comment nous contacter ?</dt>
+                <dd className="text-slate-600 leading-relaxed">
+                  Par email : <strong>ibadatkhanapc@gmail.com</strong><br />
+                  Téléphone Président : <strong>+262 692 78 78 13</strong><br />
+                  Téléphone Imam : <strong>+262 692 51 52 39</strong>
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>

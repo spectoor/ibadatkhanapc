@@ -6,21 +6,26 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ibadat Khana Noor-e-Habibia - Plateau Caillou, La Réunion",
+    default: "Ibadat Khana Noor-e-Habibia - Mosquée de Plateau Caillou, Saint-Paul, La Réunion",
     template: "%s | Ibadat Khana Noor-e-Habibia",
   },
-  description: "Association Musulmane Sunnite de Plateau Caillou (AMSPC) - Ibadat Khana et Madressah à Saint-Paul, La Réunion. Mosquée, prières quotidiennes, enseignement coranique et formation islamique pour enfants et adolescents.",
+  description: "L'Ibadat Khana Noor-e-Habibia est la mosquée de Plateau Caillou à Saint-Paul, La Réunion (97460). Gérée par l'AMSPC, elle propose des prières quotidiennes en congrégation et une Madressah (école coranique) pour enfants et adolescents. Contact : ibadatkhanapc@gmail.com — +262 692 78 78 13.",
   keywords: [
-    "Ibadat Khana",
+    "Ibadat Khana Noor-e-Habibia",
     "mosquée Plateau Caillou",
     "mosquée La Réunion",
-    "mosquée Saint-Paul",
+    "mosquée Saint-Paul Réunion",
     "AMSPC",
+    "Association Musulmane Sunnite de Plateau Caillou",
     "Madressah Réunion",
     "école coranique Réunion",
-    "prière musulmane",
-    "enseignement islamique",
-    "association musulmane",
+    "école coranique Saint-Paul",
+    "prières musulmanes Réunion",
+    "horaires prières Plateau Caillou",
+    "enseignement islamique Réunion",
+    "Tajwid Réunion",
+    "Hifz Réunion",
+    "association musulmane Réunion",
     "islam Réunion",
     "Noor-e-Habibia"
   ],
